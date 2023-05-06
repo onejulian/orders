@@ -1,0 +1,246 @@
+{
+	"info": {
+		"_postman_id": "ee69edc1-ea1b-4f89-9524-a10c7338b281",
+		"name": "orders_management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17658532"
+	},
+	"item": [
+		{
+			"name": "create article",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"reference\": \"HUEVOS-001\",\r\n  \"name\": \"Huevos de gallina\",\r\n  \"description\": \"Paquete de 12 huevos de gallina frescos y de alta calidad.\",\r\n  \"price_excluding_tax\": 6000.00,\r\n  \"applicable_tax\": 19.00\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ec2-3-15-141-113.us-east-2.compute.amazonaws.com/articles/",
+					"protocol": "http",
+					"host": [
+						"ec2-3-15-141-113",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"articles",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get article detail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://ec2-3-15-141-113.us-east-2.compute.amazonaws.com/articles/2/",
+					"protocol": "http",
+					"host": [
+						"ec2-3-15-141-113",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"articles",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update article",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"reference\": \"ARROZ-002\",\r\n  \"name\": \"Arroz integral\",\r\n  \"description\": \"Arroz integral de grano largo, con más fibra y nutrientes que el arroz blanco.\",\r\n  \"price_excluding_tax\": 2200.00,\r\n  \"applicable_tax\": 19.00\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ec2-3-15-141-113.us-east-2.compute.amazonaws.com/articles/2/",
+					"protocol": "http",
+					"host": [
+						"ec2-3-15-141-113",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"articles",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get articles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://ec2-3-15-141-113.us-east-2.compute.amazonaws.com/list-articles/",
+					"protocol": "http",
+					"host": [
+						"ec2-3-15-141-113",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"list-articles",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"order_articles\": [\r\n    {\r\n      \"article_id\": 1,\r\n      \"article_reference\": \"PAN-001\",\r\n      \"quantity\": 7\r\n    },\r\n    {\r\n      \"article_id\": 2,\r\n      \"article_reference\": \"ARROZ-001\",\r\n      \"quantity\": 2\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ec2-3-15-141-113.us-east-2.compute.amazonaws.com/orders/",
+					"protocol": "http",
+					"host": [
+						"ec2-3-15-141-113",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"orders",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get order detail",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ec2-3-15-141-113.us-east-2.compute.amazonaws.com/orders/1/",
+					"protocol": "http",
+					"host": [
+						"ec2-3-15-141-113",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"orders",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://ec2-3-15-141-113.us-east-2.compute.amazonaws.com/list-orders/",
+					"protocol": "http",
+					"host": [
+						"ec2-3-15-141-113",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"list-orders",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update order",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"order_articles\": [\r\n    {\r\n      \"article_id\": 1,\r\n      \"article_reference\": \"PAN-001\",\r\n      \"quantity\": 2\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ec2-3-15-141-113.us-east-2.compute.amazonaws.com/update-order/1/",
+					"protocol": "http",
+					"host": [
+						"ec2-3-15-141-113",
+						"us-east-2",
+						"compute",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"update-order",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
