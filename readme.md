@@ -28,7 +28,7 @@ python -m virtualenv env
 ```
 8. Instalar todos los paquetes necesarios
 ```bash
- pip install -r requirements.txt
+ pip install -r src/requirements.txt
 ```
 
 > Para levantar el servidor en local
